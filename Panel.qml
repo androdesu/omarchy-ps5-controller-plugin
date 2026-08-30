@@ -288,7 +288,7 @@ Panel {
                 anchors.horizontalCenter: parent.horizontalCenter
                 size: Style.space(72)
                 color: root.bar.foreground
-                source: Qt.resolvedUrl("assets/ps5-controller-gamepad-seeklogo.svg")
+                source: Qt.resolvedUrl("assets/ps5-controller-gamepad.svg")
               }
 
               Text {
@@ -487,7 +487,8 @@ Panel {
   // `color`. `source` defaults to the simple Lucide d-pad glyph, which is
   // designed to read at icon size — that's what the bar icon, list header,
   // and per-row icons use. The detail-page hero overrides it with the
-  // detailed seeklogo art, which only holds up once it has real room.
+  // detailed hand-drawn controller art, which only holds up once it has
+  // real room.
   component ControllerImage: Item {
     id: imageRoot
     property real size: Style.space(64)
