@@ -7,7 +7,7 @@ with its battery level and gives each one a control page for lightbar colour,
 player-LED number, headset volume, and microphone mute.
 
 <p align="center">
-  <img src="assets/screenshots/panel.png" width="360"
+  <img src="assets/screenshots/preview.png" width="360"
        alt="The PS5 Controller panel open in the Omarchy bar, headed 'PS5 Controllers' with one DualSense listed at 80% over a USB connection">
 </p>
 
