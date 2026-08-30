@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "androkami.ps5-controller",
+  "name": "PS5 Controller",
+  "version": "1.0.0",
+  "author": "androkami",
+  "license": "MIT",
+  "description": "DualSense battery in the bar, with lightbar, player LED, volume, and mic controls per controller.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "PS5 Controller",
+    "description": "Battery for connected DualSense controllers, with lightbar, player LED, volume, and mic controls.",
+    "category": "Devices",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "refreshIntervalSec": 5
+    },
+    "schema": [
+      {
+        "key": "refreshIntervalSec",
+        "type": "integer",
+        "label": "Refresh interval (seconds)",
+        "min": 2,
+        "max": 60,
+        "step": 1,
+        "defaultValue": 5
+      }
+    ]
+  }
+}
