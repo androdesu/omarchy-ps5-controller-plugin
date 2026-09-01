@@ -11,7 +11,7 @@ function parseDeviceList(text) {
   var lines = String(text || "").split("\n")
   var devices = []
   for (var i = 0; i < lines.length; i++) {
-    var match = lines[i].match(/^\s*(\S+)\s+\(([^)]+)\)\s*$/)
+    var match = lines[i].match(/^\s*(\S{1,64})\s+\(([^)]{1,32})\)\s*$/)
     if (!match) continue
     var serial = match[1]
     if (serial === "" || serial === "???") continue
@@ -65,7 +65,7 @@ function withBattery(devices, serial, battery) {
 function shortSerial(serial) {
   var text = String(serial || "").toUpperCase()
   var parts = text.split(":")
-  return parts.length >= 2 ? parts.slice(-2).join(":") : text
+  return parts.length >= 2 ? parts.slice(-2).join(":") : text.slice(-8)
 }
 
 // Only disambiguates with the serial suffix once a second controller shows

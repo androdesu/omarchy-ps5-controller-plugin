@@ -178,7 +178,7 @@ Item {
     stderr: StdioCollector { id: actionStderr; waitForEnd: true; onStreamFinished: root._actionError = text }
     onExited: function(exitCode) {
       if (exitCode !== 0) {
-        root.lastError = String(actionStderr.text || root._actionError || actionStdout.text || root._actionOutput || "dualsensectl command failed").trim()
+        root.lastError = String(actionStderr.text || root._actionError || actionStdout.text || root._actionOutput || "dualsensectl command failed").trim().slice(0, 200)
         root.actionStatus = root.lastError
         actionStatusTimer.restart()
       } else {

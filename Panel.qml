@@ -273,6 +273,7 @@ Panel {
               Text {
                 anchors.centerIn: parent
                 text: root.controllerLabel(root.activeDevice)
+                textFormat: Text.PlainText
                 color: root.bar.foreground
                 font.family: root.bar.fontFamily
                 font.pixelSize: Style.font.body
@@ -295,6 +296,7 @@ Panel {
                 width: parent.width
                 horizontalAlignment: Text.AlignHCenter
                 text: root.batteryLabel(root.activeDevice)
+                textFormat: Text.PlainText
                 color: Qt.darker(root.bar.foreground, 1.3)
                 font.family: root.bar.fontFamily
                 font.pixelSize: Style.font.caption
@@ -468,10 +470,13 @@ Panel {
               visible: controllers.actionStatus !== ""
               width: parent.width
               text: controllers.actionStatus
+              textFormat: Text.PlainText
               color: root.bar.foreground
               font.family: root.bar.fontFamily
               font.pixelSize: Style.font.caption
               wrapMode: Text.WordWrap
+              maximumLineCount: 3
+              elide: Text.ElideRight
             }
           }
         }
@@ -576,6 +581,7 @@ Panel {
 
         Text {
           text: root.controllerLabel(row.dev)
+          textFormat: Text.PlainText
           color: root.bar.foreground
           font.family: root.bar.fontFamily
           font.pixelSize: Style.font.body
@@ -584,6 +590,7 @@ Panel {
         }
         Text {
           text: root.batteryLabel(row.dev) + " · " + row.dev.connection
+          textFormat: Text.PlainText
           color: Qt.darker(root.bar.foreground, 1.4)
           font.family: root.bar.fontFamily
           font.pixelSize: Style.font.caption
